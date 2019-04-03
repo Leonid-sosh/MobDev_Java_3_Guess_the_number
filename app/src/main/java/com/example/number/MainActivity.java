@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
                 guess = Integer.parseInt(etInput.getText().toString());
-
                 if (guess > numberToGuess)
                     tvInfo.setText(getResources().getString(R.string.ahead));
                 if (guess < numberToGuess)
