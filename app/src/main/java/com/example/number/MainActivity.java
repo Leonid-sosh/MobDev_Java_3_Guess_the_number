@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     int numberToGuess = rand.nextInt(100);
     int guess;
     boolean win = false;
+    int try_cnt = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +35,34 @@ public class MainActivity extends AppCompatActivity {
         if (!win){
 
             if (etInput.getText().toString().equals("")){
-                tvInfo.setText("You have not entered a number!");
+                tvInfo.setText("Вы не ввели число!");
             }
             else {
-                guess = Integer.parseInt(etInput.getText().toString());
-                if (guess > numberToGuess)
-                    tvInfo.setText(getResources().getString(R.string.ahead));
-                if (guess < numberToGuess)
-                    tvInfo.setText(getResources().getString(R.string.behind));
-                if (guess == numberToGuess)
-                {
-                    tvInfo.setText(getResources().getString(R.string.hit));
-                    bControl.setText(getResources().getString(R.string.play_more));
-                    win = true;
+
+                if(try_cnt < 9){
+                    guess = Integer.parseInt(etInput.getText().toString());
+                    if (guess > numberToGuess)
+                        tvInfo.setText(getResources().getString(R.string.ahead) + " Осталось попыток: " + String.valueOf(9-try_cnt));
+                    if (guess < numberToGuess)
+                        tvInfo.setText(getResources().getString(R.string.behind) + " Осталось попыток: " + String.valueOf(9-try_cnt));
+                    if (guess == numberToGuess)
+                    {
+                        tvInfo.setText(getResources().getString(R.string.hit));
+                        bControl.setText(getResources().getString(R.string.play_more));
+                        win = true;
+                        try_cnt = 0;
+                    }
+                    try_cnt += 1;
                 }
+                else {
+                    bControl.setText(getResources().getString(R.string.play_more));
+                    tvInfo.setText("Вы проиграли! Правильный ответ: " + String.valueOf(numberToGuess));
+                    numberToGuess = rand.nextInt(100);
+                    win = true;
+                    try_cnt = 0;
+                }
+
+
             }
 
         }
@@ -63,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    }
+}
+
+
+
 
 
