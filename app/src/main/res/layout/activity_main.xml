@@ -43,6 +43,14 @@
                 android:onClick="onClick"
                 android:text="@string/input_value" />
         </TableRow>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
     </TableLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>

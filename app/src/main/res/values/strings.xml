@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Ges the number!</string>
-    <string name="behind">Miss down!</string>
-    <string name="ahead">Miss up!</string>
-    <string name="hit">Victory!</string>
-    <string name="input_value">Try</string>
-    <string name="play_more">Play again</string>
-    <string name="try_to_guess">Try to ges the number (1 – 100)</string>
+    <string name="app_name">Угадай число!</string>
+    <string name="behind">Недолет!</string>
+    <string name="ahead">Перелет!</string>
+    <string name="hit">В точку!</string>
+    <string name="input_value">Мне повезет!</string>
+    <string name="play_more">Сыграть еще</string>
+    <string name="try_to_guess">Попробуйте отгадать число</string>
     <string name="error">Error!</string>
 </resources>
