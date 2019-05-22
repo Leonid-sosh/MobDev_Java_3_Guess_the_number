@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         if (!win){
 
             if (etInput.getText().toString().equals("")){
-                tvInfo.setText("Вы не ввели число!");
+                tvInfo.setText("You have not entered a number!");
             }
             else {
                 guess = Integer.parseInt(etInput.getText().toString());
